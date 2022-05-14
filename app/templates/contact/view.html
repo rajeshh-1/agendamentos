@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Detalhes{% endblock %}
+
+{% block content %}
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Visualização</h1>
+</div>
+
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/contact/list" class="btn btn-info">Voltar</a>
+</div>
+
+<div class="col-2 m-auto pt-4 pb-2">
+    <strong>Nome do integrante: </strong>{{db.name}}<br>
+    <strong>Telefone: </strong>{{db.phone}}<br>
+    <strong>E-mail: </strong>{{db.email}}<br>
+    <strong>Endereço: </strong>{{db.address}}<br>
+    <strong>Numero: </strong>{{db.number}}<br>
+    <strong>Bairro: </strong>{{db.district}}<br>
+    <strong>CEP: </strong>{{db.cep}}<br>
+    <strong>Estado: </strong>{{db.state}}<br>
+    <strong>Cidade: </strong>{{db.city}}<br>
+    <strong>Grupo de contatos: </strong>{{db.contactGroup.description}}<br>
+
+</div>
+{% endblock %}

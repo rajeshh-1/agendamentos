@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Detalhes{% endblock %}
+
+{% block content %}
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Visualização</h1>
+</div>
+
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/contact-group/list/" class="btn btn-info">Voltar</a>
+</div>
+
+<div class="col-8 m-auto pt-4 pb-2 text-center">
+    <strong>Descrição: </strong>{{db.description}}<br>
+</div>
+{% endblock %}

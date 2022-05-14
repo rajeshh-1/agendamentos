@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Agendamentos{% endblock %}
+
+{% block content %}
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Agendamentos</h1>
+</div>
+
+<div class="col-8 m-auto pt-4 pb-2 text-center ">
+    <div class="col-12 m-auto pt-3 pb-2 text-center">
+        <form method="get">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Buscar...">
+        </form>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome do integrante</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">CEP</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Grupo de contatos</th>
+
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dbs in db %}
+                <tr>
+                    <th>{{dbs.id}}</th>
+                    <td>{{dbs.name}}</td>
+                    <td>{{dbs.phone}}</td>
+                    <td>{{dbs.email}}</td>
+                    <td>{{dbs.address}}</td>
+                    <td>{{dbs.number}}</td>
+                    <td>{{dbs.district}}</td>
+                    <td>{{dbs.cep}}</td>
+                    <td>{{dbs.state}}</td>
+                    <td>{{dbs.city}}</td>
+                    <td>{{dbs.contactGroup.description}}</td>
+
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <nav>
+        <ul class="pagination justify-content-center">
+            {% if db.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{db.previous_page_number}}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {%else%}
+            <li class="page-item disabled">
+                <a class="page-link" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% endif %}
+            <li class="page-item"><a class="page-link">{{db.number}}</a></li>
+            {% if db.has_next %}
+            <li class="page-item">
+                <a class="page-link"  href="?page={{db.next_page_number}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            {%else%}
+            <li class="page-item disabled">
+                <a class="page-link" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Formulário{% endblock %}
+
+{% block content %}
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Cadastro de grupo de contatos</h1>
+</div>
+
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/contact-group/list/" class="btn btn-info">Voltar</a>
+</div>
+
+<div class="col-4 m-auto pt-4 pb-2">
+    <form name="form" id="form" action="{% if db %}/contact-group/update/{{db.id}}/{%else%}/contact-group/create/{% endif %}" method="post">
+        {% csrf_token %}
+        <div class="form-group mt-4">Descrição : {{form.description}}</div>
+        <input type="submit" class="btn btn-success mt-3" value="Salvar">
+    </form>
+</div>
+{% endblock %}
