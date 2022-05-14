@@ -1,4 +1,4 @@
-# Agendamentos CRUD
+# Agenda CRUD
 
 ## Primeira etapa 
 
