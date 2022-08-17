@@ -1,28 +1,27 @@
-# Agenda CRUD
+# Schedule CRUD
 
-## Primeira etapa 
+## First step
 
-clonar o repositorio :
+clone the repository:
 
 ```sh
 $ git clone https://github.com/rajeshh-1/agendamentos.git
-$ cd agendamentos
+$ cd appointments
 ```
-## Segunda etapa
+## Second stage
 
-Ir no arquivo (settings.py) e configurar para o seu database
+Go to the file (settings.py) and configure for your database
 
-## Terceira etapa
+## Third stage
 
-Rodar este comando para a criação das tabelas
+Run this command to create tables
 
 ```sh
 $ python manage.py migrate
 ```
-## Quarta etapa
-
-Para rodar o projeto usar esse comando
+## Fourth stage
+To run the project use this command
 
 ```sh
-$ python manage.py runserver 
+$ python manage.py runserver
 ```
