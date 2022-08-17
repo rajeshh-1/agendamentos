@@ -8,18 +8,18 @@ clone the repository:
 $ git clone https://github.com/rajeshh-1/agendamentos.git
 $ cd appointments
 ```
-## Second stage
+## Second step
 
 Go to the file (settings.py) and configure for your database
 
-## Third stage
+## Third step
 
 Run this command to create tables
 
 ```sh
 $ python manage.py migrate
 ```
-## Fourth stage
+## Fourth step
 To run the project use this command
 
 ```sh
